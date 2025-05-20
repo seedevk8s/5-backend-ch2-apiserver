@@ -1,0 +1,33 @@
+flowchart TD
+    Client[Client/모바일 앱] --> WebServer1[Web Server]
+    WebServer1 --> Cache[Cache]
+    WebServer1 --> WebServer2[Web Server]
+    WebServer2 --> LoadBalancer[Load Balancer]
+    LoadBalancer --> Leader[Leader DB\nSQL/SQL/SL]
+    
+    Kafka[Message Service\nKafka] --> CDN[CDN]
+    CDN --> Videos[Videos\n1PB]
+    
+    Kafka --> SearchService[Search Service]
+    SearchService --> MessageQueue[Message Queue]
+    
+    Leader --> RecommendationService[Recommendation Service]
+    Leader --> AnalyticsLogs[Analytics/Logs]
+    Leader --> Kafka
+    
+    LoadBalancer --> RecommendationService
+    LoadBalancer --> AnalyticsLogs
+    
+    classDef client fill:#FFA07A,stroke:#333,stroke-width:1px;
+    classDef webserver fill:#B0E0E6,stroke:#333,stroke-width:1px;
+    classDef database fill:#4682B4,stroke:#333,stroke-width:1px;
+    classDef service fill:#98FB98,stroke:#333,stroke-width:1px;
+    classDef cdn fill:#FFD700,stroke:#333,stroke-width:1px;
+    classDef kafka fill:#FAFAD2,stroke:#333,stroke-width:1px;
+    
+    class Client client;
+    class WebServer1,WebServer2 webserver;
+    class Cache,LoadBalancer,Leader,Videos,AnalyticsLogs database;
+    class RecommendationService,SearchService service;
+    class CDN cdn;
+    class Kafka,MessageQueue kafka;
