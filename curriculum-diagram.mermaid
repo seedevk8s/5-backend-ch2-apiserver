@@ -1,0 +1,59 @@
+flowchart TD
+    subgraph 정규교과
+        subgraph A["클라우드 개발환경 이해 및 구축"]
+            A1[Linux]
+            A2[MSA 개발방법]
+            A3[DevOps]
+            A4[Docker]
+            A5[Kubernetes]
+            A6[형상관리]
+            A7[보안관리 기술]
+        end
+        
+        subgraph B["클라우드 객체지향 프로그래밍"]
+            B1[프로그래밍 기본문법]
+            B2[클래스와 객체]
+            B3[입출력 스트림]
+            B4[네트워크 프로그래밍]
+        end
+        
+        subgraph C["클라우드 프론트엔드 개발"]
+            C1[HTML5]
+            C2[CSS3]
+            C3[Javascript]
+            C4[React]
+        end
+        
+        subgraph D["클라우드 데이터베이스 구축 및 활용"]
+            D1[데이터베이스 구현]
+            D2[데이터베이스 모델링]
+            D3[SQL 활용 및 응용]
+        end
+        
+        subgraph E["클라우드 서버 백엔드 개발"]
+            E1[JDBC]
+            E2[JSP]
+            E3[Servlet]
+            E4[MyBatis]
+            E5[Spring Boot]
+        end
+        
+        subgraph F["클라우드 플랫폼 기반 서비스 운영 실습"]
+            F1[AWS 클라우드 웹서비스 활용]
+        end
+    end
+    
+    subgraph 프로젝트
+        P1["MSA 기반 대기오염 정보 및 날씨 정보 활용 관광지 & 캠핑장 추천 서비스"]
+        P2["쿠버네티스 구축, 메타버스 기반 WebRTC 화상회의, 화상공연 솔루션"]
+        P3["MSA기반 커피 전문점 매장관리 서비스 솔루션 구축"]
+        P4["클라우드 기반 차세대 디지털교육 통합 플랫폼 구축"]
+        P5["클라우드 기반 학생역량 통합관리"]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> 프로젝트
